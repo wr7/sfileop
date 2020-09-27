@@ -1,0 +1,23 @@
+.TH SWRITE 1 "27 September 2020"
+.SH NAME
+swrite \- a simple utility that writes to a file in hex
+.SH SYNOPSIS
+
+\fBswrite\fP \fIFILE\fP [\fI-x\fP] \fIPOSITION\fP \fISTUFF\fP
+
+.SH DESCRIPTION
+
+\fBswrite\fP is a utility that writes STUFF to FILE starting at POSITION.
+.PP
+If POSITION starts with \-, it writes starting at POSITION bytes before the end of the file. For example, swrite FILE \-2 '45 1A' will replace the second to last byte with 45 and the last byte with 1A.
+.PP
+STUFF isn't caps-sensitive, so you can use both 1a and 1A. STUFF also ignores non-hexadecimal characters, so 0v1 A4g will be read as 01a4.
+
+.SH OPTIONS
+.TP 
+\fB\-x\fP
+Specifies the next argument in hexadecimal.
+.SH SEE ALSO
+\fB
+\fBsread\fP(1)
+\fP

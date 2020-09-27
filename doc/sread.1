@@ -1,0 +1,23 @@
+.TH SREAD 1 "27 September 2020"
+.SH NAME
+sread \- a simple utility that reads a file in hex
+.SH SYNOPSIS
+
+\fBsread\fP \fIFILE\fP [\fI-x\fP] \fIPOSITION\fP [\fI-x\fP] \fILENGTH\fP
+
+.SH DESCRIPTION
+
+\fBsread\fP is a utility that reads LENGTH bytes of FILE and outputs the results in hexadecimal.
+.PP
+If POSITION starts with \-, it starts reading at POSITION bytes before the end of the file. For example, sread FILE \-2 1 will read the second to last byte.
+.PP
+If LENGTH is negative (starts with \-), it reads all bytes until it reaches the byte after LENGTH relative to the end of the file. For example, sread FILE 0 \-2 will output all bytes in FILE except the last byte.
+
+.SH OPTIONS
+.TP 
+\fB\-x\fP
+Specifies the next argument in hexadecimal.
+.SH SEE ALSO
+\fB
+\fBswrite\fP(1)
+\fP

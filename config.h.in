@@ -1,0 +1,2 @@
+#cmakedefine FILE_IO @FILE_IO@
+#cmakedefine IGNORE_OFF_T_SIZE
